@@ -1,24 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const taskInput = document.getElementById('taskInput');
-    const addTaskButton = document.getElementById('addTaskButton');
-    const taskList = document.getElementById('taskList');
+  const listCheckbox = document.getElementById('list-checkbox');
+  const listCircle = document.getElementById('list-circle');
+  const listIcon = document.getElementById('list-icon');
+  
+  // Funkcija za dodavanje novog zadatka u odabranu listu
+  function addTodoItem(listElement, taskText, taskIdPrefix) {
+    const newLi = document.createElement('li');
+    const taskId = `${taskIdPrefix}_${listElement.children.length + 1}`;
 
-    addTaskButton.addEventListener('click', () => {
-        const taskText = taskInput.value.trim();
-        if (taskText !== '') {
-            const listItem = document.createElement('li');
-            listItem.textContent = taskText;
+    newLi.innerHTML = `
+      <input type="checkbox" id="${taskId}">
+      <label for="${taskId}">${taskText}</label>
+    `;
 
-            // Dodaj gumb za brisanje (opcionalno, možeš dodati kasnije)
-            // const deleteButton = document.createElement('button');
-            // deleteButton.textContent = 'X';
-            // deleteButton.addEventListener('click', () => {
-            //     taskList.removeChild(listItem);
-            // });
-            // listItem.appendChild(deleteButton);
+    listElement.appendChild(newLi);
+  }
 
-            taskList.appendChild(listItem);
-            taskInput.value = ''; // Očisti input polje
-        }
-    });
+  // Primjer dodavanja zadataka (možeš ovo koristiti za testiranje)
+  // dodajemo u listu s kvačicom
+  addTodoItem(listCheckbox, 'Novi zadatak za kvačicu', 'task1');
+  
+  // dodajemo u listu s kružićem
+  addTodoItem(listCircle, 'Novi zadatak za kružić', 'task2');
+  
+  // dodajemo u listu s ikonom
+  addTodoItem(listIcon, 'Novi zadatak s ikonom', 'task3');
 });
