@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
@@ -16,5 +16,66 @@
             </ul>
     </div>
     <script src="script.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responzivna To-Do Lista</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Moja To-Do Lista</h1>
+
+    <div class="list-container">
+      <h2>Zadaci s kvačicom</h2>
+      <ul id="list-checkbox">
+        <li>
+          <input type="checkbox" id="task1_1">
+          <label for="task1_1">Prvi zadatak</label>
+        </li>
+        <li>
+          <input type="checkbox" id="task1_2">
+          <label for="task1_2">Drugi zadatak</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="list-container">
+      <h2>Zadaci s kružićem</h2>
+      <ul id="list-circle">
+        <li>
+          <input type="checkbox" id="task2_1">
+          <label for="task2_1">Treći zadatak</label>
+        </li>
+        <li>
+          <input type="checkbox" id="task2_2">
+          <label for="task2_2">Četvrti zadatak</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="list-container">
+      <h2>Zadaci s ikonom kvačice</h2>
+      <ul id="list-icon">
+        <li>
+          <input type="checkbox" id="task3_1">
+          <label for="task3_1">Peti zadatak</label>
+        </li>
+        <li>
+          <input type="checkbox" id="task3_2">
+          <label for="task3_2">Šesti zadatak</label>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
