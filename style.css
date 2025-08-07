@@ -8,46 +8,165 @@ body {
     margin: 0;
 }
 .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
-    display: flex; /* Aktiviraj Flexbox */
-    flex-direction: column; /* Složi elemente vertikalno */
- /* align-items: center;  Centriraj elemente horizontalno unutar kontejnera */
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-h1 {
-    text-align: center;
-    color: #333;
+
+h1, h2 {
+  text-align: center;
+  color: #555;
 }
-#taskInput {
-    width: calc(100% - 70px);
+
+.list-container {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Osnovni stil za sve liste */
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  line-height: 24px;
+}
+
+/* -------------------- 1. STIL: CHECKBOX S KVAČICOM -------------------- */
+#list-checkbox label {
+  padding-left: 35px;
+}
+
+#list-checkbox label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#list-checkbox label::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: none;
+}
+
+#list-checkbox input[type="checkbox"]:checked + label::before {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+#list-checkbox input[type="checkbox"]:checked + label::after {
+  display: block;
+}
+
+#list-checkbox input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* -------------------- 2. STIL: KRUŽIĆ KOJI SE OBOJI -------------------- */
+#list-circle label {
+  padding-left: 35px;
+}
+
+#list-circle label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#list-circle input[type="checkbox"]:checked + label::before {
+  background-color: #000;
+  border-color: #000;
+}
+
+#list-circle input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* -------------------- 3. STIL: SAMO TEKST SE PREKRIŽI, KVAČICA NE -------------------- */
+#list-icon label {
+  padding-left: 30px;
+}
+
+#list-icon label::before {
+  content: '✓'; /* Koristimo Unicode znak kvačice */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4CAF50;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#list-icon input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* -------------------- RESPONZIVNOST -------------------- */
+@media (max-width: 600px) {
+  body {
     padding: 10px;
-    margin-right: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-#addTaskButton {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-#taskList {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-#taskList li {
-    background-color: #e9ecef;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  .container {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  li {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  label {
+    font-size: 16px;
+  }
 }
