@@ -10,3 +10,5 @@ Cilj mi je naučiti osnove Gita i GitHuba, kao i razviti jednostavnu aplikaciju 
 - Dodavanje novih zadataka
 - Brisanje zadataka
 - Označavanje zadataka kao dovršenih
+
+- ### Still in progress...
