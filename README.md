@@ -1,7 +1,9 @@
 # To-Do List
 My first To-Do List App
 
-<!-- # Moja jednostavna To-Do lista -->
+<!-- # Moja jednostavna To-Do lista 
+
+urediti podhitno!!! -->
 
 Ovo je moj prvi projekt to-do liste.
 Cilj mi je naučiti osnove Gita i GitHuba, kao i razviti jednostavnu aplikaciju za upravljanje zadacima.
